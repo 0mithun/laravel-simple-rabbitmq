@@ -1,0 +1,15 @@
+<?php
+
+namespace {{ namespace }};
+
+use Mithun\SimpleRabbit\MQ\Message;
+
+class {{ class }}
+{
+    public function handler(Message $message)
+    {
+        // something...
+
+        $message->ack();
+    }
+}
