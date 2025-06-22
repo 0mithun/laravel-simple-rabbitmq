@@ -69,4 +69,26 @@ class SimpleMQ
     {
         return $this->connection()->queue()->setHeaders($headers);
     }
+
+
+
+     /**
+     * Set a message body directly with default connection and default queue
+     *
+     * @throws Exception
+     */
+    public function addOption(string $key, string $value): MQ\MessageBuilder
+    {
+        return $this->connection()->queue()->addOption($key, $value);
+    }
+
+       /**
+     * Set a message body directly with default connection and default queue
+     *
+     * @throws Exception
+     */
+    public function setDeliveryMode(int $mode): MQ\MessageBuilder
+    {
+        return $this->connection()->queue()->setDeliveryMode($mode);
+    }
 }

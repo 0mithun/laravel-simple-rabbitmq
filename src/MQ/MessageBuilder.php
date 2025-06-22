@@ -135,4 +135,26 @@ class MessageBuilder
 
         return $this;
     }
+
+
+      /**
+     * Add key value pair to existing headers
+     */
+    public function addOption($key, $value): self
+    {
+        $this->properties[$key] = $value;
+
+        return $this;
+    }
+
+
+      /**
+     * Add key value pair to existing headers
+     */
+    public function setDeliveryMode(int $mode): self
+    {
+        $this->properties['delivery_mode'] = $mode;
+
+        return $this;
+    }
 }
