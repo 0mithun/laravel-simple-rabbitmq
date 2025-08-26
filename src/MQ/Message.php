@@ -151,4 +151,20 @@ class Message implements Arrayable
 
         echo sprintf('%s | %s', date('Y-m-d H:i:s'), $body).PHP_EOL;
     }
+
+    /**
+     * Returns body of AMQPMessage as array
+     */
+    public function getRawMessage(): AMQPMessage
+    {
+        return $this->message;
+    }
+
+    /**
+     * Acknowledge one or more messages.
+     */
+    public function nack($requeue = false, $multiple = false): void
+    {
+        $this->message->nack($requeue, $multiple);
+    }
 }
